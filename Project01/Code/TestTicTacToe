@@ -1,0 +1,25 @@
+package project.Game;
+
+import static org.junit.Assert.*;
+
+
+import java.util.Scanner;
+
+import org.junit.jupiter.api.Test;
+
+class TestTicTacToe {
+	
+	 TicTacToe tc = new TicTacToe();
+	
+	@Test
+	public void testIsWin() {
+		
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt();
+		int y = sc.nextInt();
+		
+		assertTrue(tc.isWin());
+		
+	}
+	
+}

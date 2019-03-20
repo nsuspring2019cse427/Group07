@@ -1,15 +1,24 @@
 package project.Game;
 
 import static org.junit.Assert.*;
-
-
-import java.util.Scanner;
-
+import org.junit.After;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 class TestTicTacToe {
-	
+	 
+	 private TicTacToeTest testClassInstance;
 	 TicTacToe tc = new TicTacToe();
+	 
+	 @Before
+		public void setUp() throws Exception {
+			testClassInstance = new TicTacToeTest();
+		}
+
+	 @After
+		public void tearDown() throws Exception {
+			testClassInstance = null;
+		}
 	
 	@Test
 	public void testIsWin() {

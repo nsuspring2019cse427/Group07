@@ -48,8 +48,19 @@ class TestTicTacToe {
 		assertEquals(2, tc.putSign(1, 2)); 
 		
 	}
-		
-		
+	
+	
+	
+	@Test
+	public void testDisplayWinnerConditionOne() {
+		int X= 1;
+		assertNotNull(tc.isWin(X));
+	}
+	
+	
+	
+	
+	
 	}
 	
 	

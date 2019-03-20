@@ -88,6 +88,20 @@ class TestTicTacToe {
         }
 	
 	
+	@Test
+        public void testIsWinColumnThree() {
+	int O=-1;
+	int[][] board = new int[3][3];
+	board[0][2]= O;
+	board[1][2]= O;
+	board[2][2]= O;
+	
+		assertTrue(tc.isWin(O))	;
+	
+        }
+
+	
+	
 	
 	
 }

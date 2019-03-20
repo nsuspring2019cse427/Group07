@@ -27,11 +27,22 @@ class TestTicTacToe {
 		
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter x and y places");
-		int x=s.nextInt();
-		int y=s.nextInt();
+		int x=3;
+		int y=3;
 		
 		assertEquals("Invalid board position", tc.putSign(x, y));
-		}
+	}
+	
+	@Test
+	public void testPutSignConditionTwo() {
+		
+		TicTacToe t = new TicTacToe();
+		t.putSign(2,1);
+		assertEquals("Board position occupied", tc.putSign(2, 1));
+		
+		
+	} 
+	
 		
 		
 	}

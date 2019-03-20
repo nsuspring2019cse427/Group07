@@ -110,6 +110,17 @@ class TestTicTacToe {
 		
 			assertTrue(tc.isWin(X))	;
 		
+  	@Test
+	public void testIsWinRowTwo() {
+		int X=1;
+		int[][] board = new int[3][3];
+		board[1][0]= X;
+		board[1][1]= X;
+		board[1][2]= X;
+		
+			assertTrue(tc.isWin(X))	;
+		
+	}
 
 
 	@Test

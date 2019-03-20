@@ -43,6 +43,11 @@ class TestTicTacToe {
 		
 	} 
 	
+	@Test
+	public void testPutSignConditionThree() {
+		assertEquals(2, tc.putSign(1, 2)); 
+		
+	}
 		
 		
 	}

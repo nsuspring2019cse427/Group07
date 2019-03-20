@@ -146,7 +146,18 @@ class TestTicTacToe {
 		assertTrue(tc.isWin(O))	;
 	
         }
-
+	
+	@Test
+	public void testIsAntiDiagonal() {
+	int X=1;
+	int[][] board = new int[3][3];
+	board[2][0]= X;
+	board[1][1]= X;
+	board[0][2]= X;
+	
+		assertTrue(tc.isWin(X))	;
+	
+}
 	
 	
 	

@@ -58,6 +58,11 @@ class TestTicTacToe {
 	}
 	
 	
+	@Test
+	public void testDisplayWinnerConditionTwo() {
+		int O= -1;
+		assertNotNull(tc.isWin(O));
+	}
 	
 	
 	

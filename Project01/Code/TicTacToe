@@ -5,79 +5,79 @@ public class TicTacToeTest  {
 
 	public static void main(String[] args) {
 		
-		TicTacToe t = new TicTacToe();
-		Scanner s = new Scanner(System.in);
-		int x=0,y=0;
+		TicTacToe t = new TicTacToe();         //1
+		Scanner s = new Scanner(System.in);    //1
+		int x=0,y=0;//1
 		do
 		{
-			System.out.println(t.player==t.X?"Player X turn":"Player O turn");
-			System.out.println("Enter x and y places");
-			x=s.nextInt();
-			y=s.nextInt();
+			System.out.println(t.player==t.X?"Player X turn":"Player O turn");   //2
+			System.out.println("Enter x and y places");    //2
+			x=s.nextInt();   //2
+			y=s.nextInt();   //2
 			
-			t.putSign(x, y);
-			System.out.println(t.toString());
-			System.out.println("_____________________________");
-			t.displayWinner();
+			t.putSign(x, y);  //2
+			System.out.println(t.toString());  //6
+			System.out.println("_____________________________");   //16
+			t.displayWinner();  //17
 			
-		}while(t.isEmpty);
+		}while(t.isEmpty);  //1
 	}
 }
 
 class TicTacToe
 {
-	public static final int X = 1, O = -1;
-	public static final int EMPTY = 0;
+	public static final int X = 1, O = -1;  //1
+	public static final int EMPTY = 0;      //1
 	
-	public int player = X;
-	private int[][] board = new int[3][3];
-	public boolean isEmpty = false;
+	public int player = X;   //1
+	private int[][] board = new int[3][3];  //1
+	public boolean isEmpty = false;         //1
 	
 	public void putSign(int x, int y)
 	{
-		if(x<0 || x>2 || y<0 || y>2)
+		if(x<0 || x>2 || y<0 || y>2)   //3
 		{
-			System.out.println("Invalid board position");
+			System.out.println("Invalid board position");  //4
 			return;
 		}
-		if(board[x][y] != EMPTY)
+		if(board[x][y] != EMPTY)    //3
 		{
-			System.out.println("Board position occupied");
+			System.out.println("Board position occupied");   //4
 			return;
 		}
-		board[x][y] = player;
-		player = -player;
+		board[x][y] = player;   //5
+		player = -player;       //5
 	}
 	
 	public boolean isWin(int player)
 	{
-		return ((board[0][0] + board[0][1] + board[0][2] == player*3) ||
-				(board[1][0] + board[1][1] + board[1][2] == player*3) ||
-				(board[2][0] + board[2][1] + board[2][2] == player*3) ||
-				(board[0][0] + board[1][0] + board[2][0] == player*3) ||
-				(board[0][1] + board[1][1] + board[2][1] == player*3) ||
-				(board[0][2] + board[1][2] + board[2][2] == player*3) ||
-				(board[0][0] + board[1][1] + board[2][2] == player*3) ||
-				(board[2][0] + board[1][1] + board[0][2] == player*3));
+		return ((board[0][0] + board[0][1] + board[0][2] == player*3) ||   //19
+				(board[1][0] + board[1][1] + board[1][2] == player*3) ||   //19
+				(board[2][0] + board[2][1] + board[2][2] == player*3) ||   //19
+				(board[0][0] + board[1][0] + board[2][0] == player*3) ||   //19
+				(board[0][1] + board[1][1] + board[2][1] == player*3) ||   //19
+				(board[0][2] + board[1][2] + board[2][2] == player*3) ||   //19
+				(board[0][0] + board[1][1] + board[2][2] == player*3) ||   //19
+				(board[2][0] + board[1][1] + board[0][2] == player*3));    //19
 	}
 	
 	public void displayWinner()
 	{
-		if(isWin(X))
+		if(isWin(X))   //18
 		{
-			System.out.println("\n X wins...!!");
-			isEmpty=false;
+			System.out.println("\n X wins...!!");   //20
+			isEmpty=false;   //20
 		}
-		else if(isWin(O))
+		else if(isWin(O))  //18
 		{
-			System.out.println("\n O wins...!!");
-			isEmpty=false;
+			System.out.println("\n O wins...!!"); //20  
+			isEmpty=false;   
 		}
 		else
 		{
-			if(!isEmpty)
+			if(!isEmpty)    //18
 			{
-				System.out.println("its a tie");
+				System.out.println("its a tie");   //20
 			}
 			
 		}
@@ -85,36 +85,36 @@ class TicTacToe
 	
 	public String toString()
 	{
-		StringBuilder s = new StringBuilder();
-		isEmpty = false;
-		for(int i=0;i<3;i++)
+		StringBuilder s = new StringBuilder();   //7
+		isEmpty = false;   //7
+		for(int i=0;i<3;i++)   //8
 		{
-			for(int j=0;j<3;j++)
+			for(int j=0;j<3;j++)  //9
 			{
-				switch(board[i][j])
+				switch(board[i][j])  //10
 				{
-				case X: 
+				case X: //10
 					s.append(" X ");
 					break;
-				case O: 
+				case O:   //10
 					s.append(" O ");
 					break;
-				case EMPTY: 
+				case EMPTY:   //10
 					s.append("   ");
 					isEmpty=true;
 					break;
 				}
-				if(j<2)
+				if(j<2)  //11
 				{
-					s.append("|");
+					s.append("|");  //12
 				}
 				
 			}
-			if(i<2)
+			if(i<2)  //13
 			{
-				s.append("\n-----------\n");
+				s.append("\n-----------\n");  //14
 			}
 		}
-		return s.toString();
+		return s.toString();  //15
 	}
 }

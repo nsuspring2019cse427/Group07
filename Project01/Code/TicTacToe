@@ -73,9 +73,9 @@ class TicTacToe
 			System.out.println("\n O wins...!!"); //20  
 			isEmpty=false;   
 		}
-		else
+		else  //18
 		{
-			if(!isEmpty)    //18
+			if(!isEmpty)    //19
 			{
 				System.out.println("its a tie");   //20
 			}
